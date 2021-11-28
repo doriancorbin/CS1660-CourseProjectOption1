@@ -14,7 +14,7 @@ Images Used:
 
 Steps for packaging/deploying/exposing MAIN APPLICATION (using Spring Boot)
 
-1. ./mvnw -DskipTests package
+1. Navigate to gs-spring-boot/complete
 
 2. ./mvnw -DskipTests com.google.cloud.tools:jib-maven-plugin:build \
   -Dimage=gcr.io/$GOOGLE_CLOUD_PROJECT/mainapp:v1
