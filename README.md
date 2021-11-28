@@ -1,5 +1,10 @@
 # CS1660-CourseProjectOption1
 
+FOLDER DESCRIPTIONS:
+- YAML-Files: Contains the yaml files for deployments and services
+- gs-spring-boot: Contains the code used to create main application
+
+
 Images Used:
 - Apache Spark: bitnami/spark
 - Apache Hadoop: bde2020/hadoop-namenode & bde2020/hadoop-datanode
