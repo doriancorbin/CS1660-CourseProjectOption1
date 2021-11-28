@@ -1,10 +1,10 @@
 # CS1660-CourseProjectOption1
 
 Images Used:
--Apache Spark: bitnami/spark
--Apache Hadoop: bde2020/hadoop-namenode & bde2020/hadoop-datanode
--Jupyter Notebook: jupyter/datascience-notebook
--SonarQube/SonarScanner: sonarqube
+- Apache Spark: bitnami/spark
+- Apache Hadoop: bde2020/hadoop-namenode & bde2020/hadoop-datanode
+- Jupyter Notebook: jupyter/datascience-notebook
+- SonarQube/SonarScanner: sonarqube
 
 
 Steps for packaging/deploying/exposing MAIN APPLICATION (using Spring Boot)
