@@ -48,7 +48,7 @@ Steps for Hadoop Namenode
 1. docker pull bde2020/hadoop-namenode  bde2020/hadoop-datanode
 2. kubectl create deployment namenode --image=bde2020/hadoop-namenode:latest
 3. kubectl set env deployment/namenode CORE_CONF_fs_defaultFS=hdfs://namenode:9000 CORE_CONF_hadoop_http_staticuser_user=root CORE_CONF_hadoop_proxyuser_hue_hosts=* CORE_CONF_hadoop_proxyuser_hue_groups=* CORE_CONF_io_compression_codecs=org.apache.hadoop.io.compress.SnappyCodec HDFS_CONF_dfs_webhdfs_enabled=true HDFS_CONF_dfs_permissions_enabled=false HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check=false
-4. kubectl scale --replicas=1 -f namenode.yaml 
+4. kubectl scale --current-replicas=3 --replicas=1 deployment/namenode
 5. kubectl expose deployment namenode --name=namenode-service --type=LoadBalancer --port 9870,9000 --target-port 9870,9000
 
 Steps for Hadoop Datanodes
@@ -56,7 +56,7 @@ Steps for Hadoop Datanodes
 1. docker pull bde2020/hadoop-datanode
 2. kubectl create deployment datanode --image=bde2020/hadoop-datanode:latest
 3. kubectl set env deployment/datanode CORE_CONF_fs_defaultFS=hdfs://namenode:9000 CORE_CONF_hadoop_http_staticuser_user=root CORE_CONF_hadoop_proxyuser_hue_hosts=* CORE_CONF_hadoop_proxyuser_hue_groups=* CORE_CONF_io_compression_codecs=org.apache.hadoop.io.compress.SnappyCodec HDFS_CONF_dfs_webhdfs_enabled=true HDFS_CONF_dfs_permissions_enabled=false HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check=false
-4. kubectl scale --replicas=2 -f datanode.yaml 
+4. kubectl scale --current-replicas=3 --replicas=2 deployment/datanode
 5. kubectl expose deployment datanode --name=datanode-service --type=LoadBalancer --port 9870,9000 --target-port 9870,9000
   
 
