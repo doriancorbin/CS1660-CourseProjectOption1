@@ -1,0 +1,253 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2021-11-27T17:40:24Z"
+  generation: 2
+  labels:
+    app: namenode
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app: {}
+          f:spec:
+            f:containers:
+              k:{"name":"hadoopnamenode-sha256-1"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"CLUSTER_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"CORE_CONF_hadoop_http_staticuser_user"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"CORE_CONF_hadoop_proxyuser_hue_groups"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"CORE_CONF_hadoop_proxyuser_hue_hosts"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"CORE_CONF_io_compression_codecs"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"HDFS_CONF_dfs_permissions_enabled"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                  k:{"name":"HDFS_CONF_dfs_webhdfs_enabled"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:configMapKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: GoogleCloudConsole
+    operation: Update
+    time: "2021-11-27T17:40:24Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-11-28T15:54:24Z"
+  name: namenode
+  namespace: default
+  resourceVersion: "2586895"
+  uid: 1e7bb05e-ff09-4709-bb67-d37fe3fe3804
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: namenode
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: namenode
+    spec:
+      containers:
+      - env:
+        - name: CLUSTER_NAME
+          valueFrom:
+            configMapKeyRef:
+              key: CLUSTER_NAME
+              name: namenode-config-bnqn
+        - name: CORE_CONF_hadoop_http_staticuser_user
+          valueFrom:
+            configMapKeyRef:
+              key: CORE_CONF_hadoop_http_staticuser_user
+              name: namenode-config-bnqn
+        - name: CORE_CONF_hadoop_proxyuser_hue_hosts
+          valueFrom:
+            configMapKeyRef:
+              key: CORE_CONF_hadoop_proxyuser_hue_hosts
+              name: namenode-config-bnqn
+        - name: CORE_CONF_hadoop_proxyuser_hue_groups
+          valueFrom:
+            configMapKeyRef:
+              key: CORE_CONF_hadoop_proxyuser_hue_groups
+              name: namenode-config-bnqn
+        - name: CORE_CONF_io_compression_codecs
+          valueFrom:
+            configMapKeyRef:
+              key: CORE_CONF_io_compression_codecs
+              name: namenode-config-bnqn
+        - name: HDFS_CONF_dfs_webhdfs_enabled
+          valueFrom:
+            configMapKeyRef:
+              key: HDFS_CONF_dfs_webhdfs_enabled
+              name: namenode-config-bnqn
+        - name: HDFS_CONF_dfs_permissions_enabled
+          valueFrom:
+            configMapKeyRef:
+              key: HDFS_CONF_dfs_permissions_enabled
+              name: namenode-config-bnqn
+        - name: HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check
+          valueFrom:
+            configMapKeyRef:
+              key: HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check
+              name: namenode-config-bnqn
+        image: gcr.io/newprojectattempt-332619/hadoopnamenode@sha256:fdf74110805132d646cf6f12635efc0919e1fb2ac5bd376c5366272fc261301e
+        imagePullPolicy: IfNotPresent
+        name: hadoopnamenode-sha256-1
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2021-11-27T17:40:24Z"
+    lastUpdateTime: "2021-11-27T17:40:27Z"
+    message: ReplicaSet "namenode-678c9f68df" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2021-11-28T15:54:24Z"
+    lastUpdateTime: "2021-11-28T15:54:24Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 2
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
