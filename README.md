@@ -64,4 +64,8 @@ EXTERNAL REFERENCES:
 https://codelabs.developers.google.com/codelabs/cloud-springboot-kubernetes#7
 https://github.com/big-data-europe/docker-hadoop
 https://cloud.google.com/kubernetes-engine/docs/how-to/exposing-apps
-
+https://hub.docker.com/r/jupyter/datascience-notebook/
+https://hub.docker.com/r/bde2020/hadoop-namenode
+https://hub.docker.com/r/bde2020/hadoop-datanode
+https://hub.docker.com/_/sonarqube
+https://hub.docker.com/r/bitnami/spark/
